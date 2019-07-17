@@ -12,6 +12,7 @@
 		5474E98122DEBE290078BAC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5474E97F22DEBE290078BAC4 /* Main.storyboard */; };
 		5474E98322DEBE2A0078BAC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5474E98222DEBE2A0078BAC4 /* Assets.xcassets */; };
 		5474E98622DEBE2A0078BAC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5474E98422DEBE2A0078BAC4 /* LaunchScreen.storyboard */; };
+		54D09AF422DEE65F00C1514E /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D09AF322DEE65F00C1514E /* InputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		5474E98222DEBE2A0078BAC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5474E98522DEBE2A0078BAC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5474E98722DEBE2A0078BAC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54D09AF322DEE65F00C1514E /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				5474E97B22DEBE290078BAC4 /* AppDelegate.swift */,
 				5474E97D22DEBE290078BAC4 /* ViewController.swift */,
 				5474E97F22DEBE290078BAC4 /* Main.storyboard */,
+				54D09AF322DEE65F00C1514E /* InputViewController.swift */,
 				5474E98222DEBE2A0078BAC4 /* Assets.xcassets */,
 				5474E98422DEBE2A0078BAC4 /* LaunchScreen.storyboard */,
 				5474E98722DEBE2A0078BAC4 /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54D09AF422DEE65F00C1514E /* InputViewController.swift in Sources */,
 				5474E97E22DEBE290078BAC4 /* ViewController.swift in Sources */,
 				5474E97C22DEBE290078BAC4 /* AppDelegate.swift in Sources */,
 			);
