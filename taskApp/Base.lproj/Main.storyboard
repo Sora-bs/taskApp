@@ -100,15 +100,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nnf-HG-SzO">
-                                <rect key="frame" x="10" y="329" width="413" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="L5q-AD-YcV"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="585034013.93078804">
-                                    <!--2019-07-17 05:26:53 +0000-->
-                                </date>
-                            </datePicker>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HRQ-dR-Wti">
                                 <rect key="frame" x="10" y="199" width="394" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,6 +110,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nnf-HG-SzO">
+                                <rect key="frame" x="0.0" y="329" width="414" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="L5q-AD-YcV"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="585034013.93078804">
+                                    <!--2019-07-17 05:26:53 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -131,8 +131,8 @@
                             <constraint firstItem="HRQ-dR-Wti" firstAttribute="leading" secondItem="K7X-fa-ZVC" secondAttribute="leading" constant="10" id="Hfr-Dh-RV5"/>
                             <constraint firstItem="K7X-fa-ZVC" firstAttribute="trailing" secondItem="70O-IS-lXX" secondAttribute="trailing" constant="10" id="NZN-Qt-xig"/>
                             <constraint firstItem="hvD-J9-GLR" firstAttribute="top" secondItem="K7X-fa-ZVC" secondAttribute="top" constant="10" id="RKc-3b-mzj"/>
-                            <constraint firstItem="nnf-HG-SzO" firstAttribute="leading" secondItem="K7X-fa-ZVC" secondAttribute="leading" constant="10" id="bgK-GZ-wo0"/>
-                            <constraint firstItem="nnf-HG-SzO" firstAttribute="trailing" secondItem="K7X-fa-ZVC" secondAttribute="trailing" constant="10" id="eEv-Jz-Kgh"/>
+                            <constraint firstAttribute="trailing" secondItem="nnf-HG-SzO" secondAttribute="trailing" id="feu-HC-NVP"/>
+                            <constraint firstItem="nnf-HG-SzO" firstAttribute="leading" secondItem="K7X-fa-ZVC" secondAttribute="leading" id="gqG-sp-PVW"/>
                             <constraint firstItem="K7X-fa-ZVC" firstAttribute="trailing" secondItem="hvD-J9-GLR" secondAttribute="trailing" constant="10" id="hlY-NX-iZq"/>
                             <constraint firstItem="HRQ-dR-Wti" firstAttribute="top" secondItem="70O-IS-lXX" secondAttribute="bottom" constant="10" id="jg7-bD-VYI"/>
                             <constraint firstItem="K7X-fa-ZVC" firstAttribute="trailing" secondItem="HRQ-dR-Wti" secondAttribute="trailing" constant="10" id="kY5-HG-OcF"/>
@@ -140,6 +140,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K7X-fa-ZVC"/>
                     </view>
+                    <connections>
+                        <outlet property="contentsTextView" destination="HRQ-dR-Wti" id="XT0-Ju-Wsz"/>
+                        <outlet property="datePicker" destination="nnf-HG-SzO" id="EKP-HU-HaX"/>
+                        <outlet property="titleTextField" destination="VJS-pV-6Oc" id="kjQ-zS-CAh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GUP-nF-ESl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
