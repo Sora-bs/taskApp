@@ -19,6 +19,9 @@ class InputViewController: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBOutlet weak var category: UITextField!
+    
+    
     let realm = try! Realm()
     var task: Task!
     
@@ -34,6 +37,7 @@ class InputViewController: UIViewController {
         datePicker.date = task.date
     }
     
+//   画面遷移時に発動
     override func viewWillDisappear(_ animated: Bool) {
         try! realm.write {
             self.task.title = self.titleTextField.text!
