@@ -53,8 +53,9 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GVp-P9-lI9" secondAttribute="bottom" id="ZrU-xc-4MU"/>
                             <constraint firstItem="GVp-P9-lI9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b3b-pL-be7"/>
+                            <constraint firstItem="GVp-P9-lI9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="epe-DG-sjo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GVp-P9-lI9" secondAttribute="trailing" id="sCf-wH-DFO"/>
-                            <constraint firstItem="GVp-P9-lI9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sbH-Jw-B0e"/>
+                            <constraint firstItem="GVp-P9-lI9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tav-74-ADm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -158,13 +159,22 @@
                         <viewLayoutGuide key="safeArea" id="K7X-fa-ZVC"/>
                     </view>
                     <connections>
-                        <outlet property="category" destination="L3K-lX-S7z" id="Wq9-xH-9Sp"/>
+                        <outlet property="categoryField" destination="L3K-lX-S7z" id="CgB-n6-TfS"/>
                         <outlet property="contentsTextView" destination="HRQ-dR-Wti" id="XT0-Ju-Wsz"/>
                         <outlet property="datePicker" destination="nnf-HG-SzO" id="EKP-HU-HaX"/>
+                        <outlet property="searchDisplayController" destination="k0B-n7-V79" id="2DX-sF-pBU"/>
                         <outlet property="titleTextField" destination="VJS-pV-6Oc" id="kjQ-zS-CAh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GUP-nF-ESl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="k0B-n7-V79">
+                    <connections>
+                        <outlet property="delegate" destination="lFO-y3-uaY" id="6gG-fa-OQi"/>
+                        <outlet property="searchContentsController" destination="lFO-y3-uaY" id="fr1-i4-EFH"/>
+                        <outlet property="searchResultsDataSource" destination="lFO-y3-uaY" id="94Y-BJ-M4X"/>
+                        <outlet property="searchResultsDelegate" destination="lFO-y3-uaY" id="dyU-6M-dFg"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1718.840579710145" y="20.758928571428569"/>
         </scene>

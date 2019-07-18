@@ -11,10 +11,12 @@ import RealmSwift
 import UserNotifications
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var searchResults:[Task] = []
+    var searchController = UISearchController()
     // Realmインスタンスを取得する
     let realm = try! Realm()
     
@@ -30,11 +32,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.sizeToFit()
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        
+        tableView.tableHeaderView = searchController.searchBar
+        
     }
     
     // データの数（＝セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskArray.count
+
+        if searchController.isActive {
+            return searchResults.count
+        } else {
+            return taskArray.count
+        }
     }
     
     // 各セルの内容を返すメソッド
@@ -43,18 +58,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 再利用可能な cell を得る
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
+//        タイトルに title を入れている
         let task = taskArray[indexPath.row]
         cell.textLabel?.text = task.title
 
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
 
+//        サブタイトルに date を入れている
         let dateString:String = formatter.string(from: task.date)
         cell.detailTextLabel?.text = dateString
         
         return cell
     }
-    
     
    // 各セルを選択した時に実行されるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -119,8 +135,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 入力画面から戻ってきた時に TableView を更新させる
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        
+        self.tableView.reloadData()
+    }
+    
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        let predicate = NSPredicate(format: "category CONTAINS %@", searchController.searchBar.text!)
+        let realm = try! Realm()
+        let categories = realm.objects(Task.self).filter(predicate)
+        searchResults = []
+        categories.forEach { item in
+            searchResults.append(item)
+        }
+        
+        self.tableView.reloadData()
     }
     
 }
-
